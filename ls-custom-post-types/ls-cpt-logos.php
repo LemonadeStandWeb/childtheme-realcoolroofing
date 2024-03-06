@@ -31,7 +31,7 @@ function ls_create_logos() {
 		'rewrite'			  => true,
 		'capability_type'	  => 'post',	
 		'hierarchical'        => false,	
-		'supports'            => array( 'title', 'excerpt', 'thumbnail', 'revisions', 'page-attributes', 'editor'),
+		'supports'            => array( 'title', 'page-attributes'),
 		'taxonomies'		  => array('logo_type'),
 		'menu_position'       => 6,
 		'exclude_from_search' => false,
