@@ -20,7 +20,8 @@ function ls_shortcode_logo() {
     // Check if any logos posts exist
     if ($query->have_posts()) {
 
-        // TODO: Lay UX Builder shortcode groundwork
+        $shortcodes = '';
+        $shortcodes .= '[ux_slider slide_width="33.3%" nav_pos="outside" arrows="false" bullets="false" timer="4000" class="reviews-slider"]'; 
 
         // Start the loop
         while ($query->have_posts()) {
@@ -28,15 +29,19 @@ function ls_shortcode_logo() {
 
             // Grab ACF Fields
             $ls_logo_image = get_field('ls_logo_image');
-            $size = 'medium'; // (thumbnail, medium, large, full or custom size)
 
             if ( $ls_logo_image ) {
-                echo wp_get_attachment_image( $ls_logo_image, $size );
+                $shortcodes .= '[ux_image id="' . $ls_logo_image . '" height="80px"]';
             }
-            // Display the title
-            echo '<h2>' . get_the_title() . '</h2>';
+
         }
+
+        // Close the slider
+        $shortcodes .= '[/ux_slider]';
+
         wp_reset_postdata();
+
+        echo do_shortcode($shortcodes);
     }
 
     return ob_get_clean();
