@@ -3,7 +3,7 @@
 function ls_shortcode_reviews(){
     ob_start();
 
-    echo 'okay i love you bye bye!';
+    echo 'review goes here';
 
     return ob_get_clean();
 }
