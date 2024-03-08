@@ -1,12 +1,16 @@
 <?php
 
-function ls_shortcode_reviews($atts){
+function ls_shortcode_reviews( $atts, $content = null ) {
     ob_start();
+
+    $a = shortcode_atts( array(
+        'num_posts' => '3'
+    ), $atts );
 
     // Define query arguments
     $args = array(
         'post_type' => 'reviews',
-        'posts_per_page'=> 3,
+        'posts_per_page'=> $a['num_posts'],
     );
 
     // Run the query
