@@ -4,7 +4,8 @@ function ls_shortcode_reviews( $atts, $content = null ) {
     ob_start();
 
     $a = shortcode_atts( array(
-        'num_posts' => '3'
+        'num_posts' => '3',
+        'post_color' =>'rgb(255,255,255)'
     ), $atts );
 
     // Define query arguments
@@ -19,7 +20,7 @@ function ls_shortcode_reviews( $atts, $content = null ) {
     if( $query->have_posts() ) {
 
         $shortcodes ='';
-        $shortcodes .= '[row style="small" col_bg="rgb(255,255,255)" v_align="equal" h_align="center" padding="40px 40px 40px 40px" depth="5"]';
+        $shortcodes .= '[row style="small" col_bg="' . $a['post_color'] . '" v_align="equal" h_align="center" padding="40px 40px 40px 40px" depth="5"]';
         
         while( $query->have_posts() ) {
             $query->the_post();
@@ -48,6 +49,25 @@ function ls_shortcode_reviews( $atts, $content = null ) {
         $shortcodes .= '[/row]';
 
         echo do_shortcode($shortcodes);
+    }
+    else {
+        $empty_code = '';
+        $empty_code .= '[row style="small" col_bg="' . $a['post_color'] . '" v_align="equal" h_align="center" padding="40px 40px 40px 40px" depth="5"]
+        
+        [col span="4" span__sm="12" span__md="10" align="left" animate="fadeInUp"]
+
+        [featured_box img="262" icon_color="rgb(60, 156, 214)"]
+        
+        <h6> No Reviews Found </h6>
+        
+        [/featured_box]
+        [gap height="15px"]
+                
+        [/col]
+
+        [/row]';
+
+        echo do_shortcode($empty_code);
     }
 
     return ob_get_clean();
