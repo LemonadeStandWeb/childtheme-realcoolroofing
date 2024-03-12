@@ -30,14 +30,14 @@ function ls_shortcode_faq() {
             $ls_faq_answer = get_field('answer');
 
             if ( $ls_faq_answer && $ls_faq_question ) {
-                $shortcodes .= "[accordion-item title={$question}]";
-                $shortcodes .= "<p>{$answer}</p>";
+                $shortcodes .= '[accordion-item title="' . $ls_faq_question . '"]';
+                $shortcodes .= '<p>' . $ls_faq_answer . '</p>';
                 $shortcodes .= '[/accordion-item]';
             }
         
             $shortcodes .= '[/accordion]';
         }
-        
+
         wp_reset_postdata();
         echo do_shortcode($shortcodes);
     }
