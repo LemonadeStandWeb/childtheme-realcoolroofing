@@ -1,6 +1,6 @@
 <?php
 /**
- * Shortcode to display faqs
+ * Shortcode to display FAQs
  * 
  * TODO: Longer description of the shortcode
  */
@@ -34,10 +34,9 @@ function ls_shortcode_faq() {
                 $shortcodes .= '<p>' . $ls_faq_answer . '</p>';
                 $shortcodes .= '[/accordion-item]';
             }
-        
-            $shortcodes .= '[/accordion]';
         }
 
+        $shortcodes .= '[/accordion]';
         wp_reset_postdata();
         echo do_shortcode($shortcodes);
     }
