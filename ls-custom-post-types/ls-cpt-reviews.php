@@ -39,7 +39,7 @@ function lemonade_create_reviews() {
 		'show_in_admin_bar'   => true,
 		'can_export'          => true,
 		'show_in_rest'		  => true,	
-		'menu_icon' => 'dashicons-clipboard',
+		'menu_icon' => 'dashicons-admin-comments',
 	);
 
 	register_post_type( 'reviews', $args );
