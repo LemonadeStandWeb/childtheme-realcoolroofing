@@ -29,7 +29,7 @@ function lemonade_create_reviews() {
 		'rewrite'			  => true,
 		'capability_type'	  => 'post',	
 		'hierarchical'        => false,	
-		'supports'            => array( 'revisions' ),
+		'supports'            => array( 'title', 'revisions' ),
 		'taxonomies'		  => array('review_type'),
 		'menu_position'       => 6,
 		'exclude_from_search' => false,
