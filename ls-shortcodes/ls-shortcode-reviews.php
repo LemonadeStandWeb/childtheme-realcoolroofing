@@ -34,7 +34,7 @@ function ls_shortcode_reviews( $atts, $content = null ) {
 
                 $shortcodes .= '[col span="4" span__sm="12" span__md="10" align="left" animate="fadeInUp"]
 
-                [featured_box img="262" icon_color="rgb(60, 156, 214)"]
+                [featured_box img="262" icon_color="' . $a['icon_color'] . '"]
                 
                 <p class="mb-0"> ' . $ls_review_text . ' </p>
                 
