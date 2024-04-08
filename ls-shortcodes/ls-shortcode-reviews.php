@@ -5,7 +5,8 @@ function ls_shortcode_reviews( $atts, $content = null ) {
 
     $a = shortcode_atts( array(
         'num_posts' => '3',
-        'post_color' =>'rgb(255,255,255)'
+        'post_color' =>'rgb(255,255,255)',
+        'col_border_radius' => '0px',
     ), $atts );
 
     // Define query arguments
@@ -20,7 +21,7 @@ function ls_shortcode_reviews( $atts, $content = null ) {
     if( $query->have_posts() ) {
 
         $shortcodes ='';
-        $shortcodes .= '[row style="small" col_bg="' . $a['post_color'] . '" v_align="equal" h_align="center" padding="40px 40px 40px 40px" depth="5"]';
+        $shortcodes .= '[row style="small" col_bg="' . $a['post_color'] . '" col_bg_radius="' . $a['col_border_radius'] . '" v_align="equal" h_align="center" padding="40px 40px 40px 40px" depth="5"]';
         
         while( $query->have_posts() ) {
             $query->the_post();

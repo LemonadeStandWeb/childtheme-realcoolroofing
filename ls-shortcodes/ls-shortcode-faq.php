@@ -1,8 +1,7 @@
 <?php
 /**
  * Shortcode to display FAQs
- * 
- * TODO: Longer description of the shortcode
+ * Usage: [ls_faqs]
  */
 function ls_shortcode_faq() {
 
