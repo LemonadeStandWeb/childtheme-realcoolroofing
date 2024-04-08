@@ -1,8 +1,7 @@
 <?php
 /**
  * Shortcode to display logos
- * 
- * TODO: Longer description of the shortcode
+ * Usage: [ls_logos]
  */
 function ls_shortcode_logo() {
 
@@ -12,6 +11,8 @@ function ls_shortcode_logo() {
     $args = array(
         'post_type' => 'logos',
         'posts_per_page' => -1,
+        'orderby' => 'menu_order',
+        'order' => 'ASC',
     );
 
     // Run the query
@@ -20,8 +21,19 @@ function ls_shortcode_logo() {
     // Check if any logos posts exist
     if ( $query->have_posts() ) {
 
+        // Check how many posts are returned
+        $count = $query->post_count;
+
+        // Slider will infinite scroll if more than 3 logos
+        $slider_atts = '';
+        if ( $count > 3 ) {
+            $slider_atts = '[ux_slider slide_width="33%" slide_align="left" arrows="false" bullets="false" timer="4000" class="reviews-slider"]';
+        } else {
+            $slider_atts = '[ux_slider slide_width="33%" slide_align="left" infinitive="false" arrows="false" bullets="false" timer="4000" class="reviews-slider"]';
+        }
+
         $shortcodes = '';
-        $shortcodes .= '[ux_slider slide_width="33.3%" slide_align="left" nav_pos="outside" arrows="false" bullets="false" timer="4000" class="reviews-slider"]'; 
+        $shortcodes .= $slider_atts;
 
         // Start the loop
         while ( $query->have_posts() ) {
