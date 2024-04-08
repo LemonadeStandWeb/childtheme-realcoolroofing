@@ -25,7 +25,7 @@ function ls_create_faqs() {
 		'description'         => 'FAQ post type',
 		'labels'              => $labels,
 		'public'              => true,
-		'has_archive'         => true,
+		'has_archive'         => false,
 		'publicly_queryable'  => true,
 		'query_var' 	      => true,
 		'rewrite'			  => true,
