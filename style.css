@@ -222,3 +222,8 @@ ul li.bullet-checkmark:before, ul li.bullet-arrow:before, ul li.bullet-star:befo
 		padding: 0px !important;
 	}
 }
+
+/* Scale down image on ls_logos shortcode */
+.reviews-slider .img-inner img{
+object-fit: scale-down;
+}
