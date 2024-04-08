@@ -6,6 +6,7 @@ function ls_shortcode_reviews( $atts, $content = null ) {
     $a = shortcode_atts( array(
         'num_posts' => '3',
         'post_color' =>'rgb(255,255,255)',
+        'icon_color' => 'rgb(60, 156, 214)',
         'col_border_radius' => '0px',
     ), $atts );
 
