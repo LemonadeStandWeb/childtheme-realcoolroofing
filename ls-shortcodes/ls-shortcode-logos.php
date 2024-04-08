@@ -21,7 +21,7 @@ function ls_shortcode_logo() {
     if ( $query->have_posts() ) {
 
         $shortcodes = '';
-        $shortcodes .= '[ux_slider slide_width="33.3%" nav_pos="outside" arrows="false" bullets="false" timer="4000" class="reviews-slider"]'; 
+        $shortcodes .= '[ux_slider slide_width="33.3%" slide_align="left" nav_pos="outside" arrows="false" bullets="false" timer="4000" class="reviews-slider"]'; 
 
         // Start the loop
         while ( $query->have_posts() ) {
