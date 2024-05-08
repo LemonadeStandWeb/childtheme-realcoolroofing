@@ -8,6 +8,7 @@ function ls_shortcode_reviews( $atts, $content = null ) {
         'post_color' =>'rgb(255,255,255)',
         'icon_color' => 'rgb(60, 156, 214)',
         'col_border_radius' => '0px',
+        'icon_img' => '262',
     ), $atts );
 
     // Define query arguments
